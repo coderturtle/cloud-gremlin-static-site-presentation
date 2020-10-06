@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <a href="https://revealjs.com">
+            <img
+              src="images/cloud-gremlin-blk.png"
+              alt="reveal.js logo"
+              style="
+                height: 180px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+              class="demo-logo"
+            />
+          </a>
+          <h3>Hosting a Static Site</h3>
+          <p>
+            <small>Derm Duncan</small>
+          </p>
+        </section>
+        <section>
+          <p>Traditional 3-tiered architecture</p>
+          <img
+            src="images/3-tier.png"
+            alt="3-tier architecture"
+            style="
+              height: 275px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+            class="demo-logo"
+          />
+          <p>
+            <small>
+              <ol>
+                <li>Vertical Scaling Only</li>
+                <li>More attack vectors</li>
+                <li>Ops & Maintenance Expensive</li>
+              </ol>
+            </small>
+          </p>
+        </section>
+        <section>
+          <p>Protect with reverse proxy</p>
+          <img
+            src="images/reverse-proxy.png"
+            alt="reverse proxy"
+            style="
+              height: 275px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+          />
+          <p>
+            <small>
+              <ol>
+                <li>Anonymous Infrastructure</li>
+                <li>Limits Attack Vectors</li>
+                <li>Ops & Maintenance Expensive</li>
+              </ol>
+            </small>
+          </p>
+        </section>
+        <section>
+          <p>CDN Reverse Proxy (Cloudflare)</p>
+          <img
+            src="images/cf-waf.png"
+            alt="cloudflare waf"
+            style="
+              height: 275px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+          />
+          <p>
+            <small>
+              <ol>
+                <li>Anonymous Infrastructure</li>
+                <li>Limits Attack Vectors</li>
+                <li>DDOS Protection</li>
+                <li>Ops & Maintenance Expensive</li>
+              </ol>
+            </small>
+          </p>
+        </section>
+        <section>
+          <p>Serverless Static Site in AWS</p>
+          <img
+            src="images/architecture.png"
+            alt="cloudflare waf"
+            style="
+              height: 275px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+          />
+          <p>
+            <small>
+              <a href="https://gremlins.io/walkthroughs/static-site/"
+                >Dynamic Reference Architecture Walkthrough</a
+              >
+              <ol>
+                <li>Infinitely Scalable</li>
+                <li>DevOps Friendly</li>
+                <li>Reduced Attack Vectors</li>
+              </ol>
+            </small>
+          </p>
+        </section>
+        <section>
+          <p>Best of both worlds</p>
+          <img
+            src="images/cloudfront-with-cloudflare.png"
+            alt="cloudflare and cloudfront"
+            style="
+              height: 275px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+          />
+          <p>
+            <small>
+              <ol>
+                <li>DDOS protection</li>
+                <li>Layered Security & reduced attack vectors</li>
+              </ol>
+            </small>
+          </p>
+        </section>
+        <section>
+          <p>Alternative Approach 1: Netlify & Cloudfare</p>
+          <img
+            src="images/cf-with-netlify.png"
+            alt="cloudflare and netlify"
+            style="
+              height: 275px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+          />
+          <p>
+            <small>
+              <ol>
+                <li>Netlify handles hosting and devops</li>
+                <li>Cloudflare handles CDN & DDOS mitigation</li>
+              </ol>
+            </small>
+          </p>
+        </section>
+        <section>
+          <p>Alternative Approach 2: Cloudflare Workers</p>
+          <img
+            src="images/cf-worker.png"
+            alt="cloudflare worker"
+            style="
+              height: 275px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+          />
+          <p>
+            <a
+              href="https://www.forbes.com/sites/janakirammsv/2020/07/27/cloudflare-takes-on-aws-lambdaedge-with-a-cheaper-and-faster-serverless-platform/"
+              >Cloudflare Workers Announced</a
+            >
+            <small>
+              <ol>
+                <li>Similar functionality to lambda@edge</li>
+                <li>More suited to dynamic workloads</li>
+              </ol>
+            </small>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
